@@ -1,4 +1,3 @@
-
 # Crest App
 
 A private, non-judgmental harm reduction sanctuary built with React Native and Expo.
@@ -35,18 +34,6 @@ src/
 app/              # Expo Router screens
 ```
 
-Find others who are using TypeScript at [our community page](https://www.typescriptlang.org/community/).
-
-## Installing
-
-For the latest stable version:
-
-```bash
-npm install -D typescript
-```
-
-For our nightly builds:
-
 ```bash
 npm install -D typescript@next
 ```
@@ -74,3 +61,6 @@ with any additional questions or comments.
 ## Roadmap
 
 For details on our planned features and future direction, please refer to our [roadmap](https://github.com/microsoft/TypeScript/wiki/Roadmap).
+=======
+# Crest1
+>>>>>>> origin/main
