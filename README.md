@@ -1,13 +1,39 @@
 
-# TypeScript
+# Crest App
 
-[![CI](https://github.com/microsoft/TypeScript/actions/workflows/ci.yml/badge.svg)](https://github.com/microsoft/TypeScript/actions/workflows/ci.yml)
-[![npm version](https://badge.fury.io/js/typescript.svg)](https://www.npmjs.com/package/typescript)
-[![Downloads](https://img.shields.io/npm/dm/typescript.svg)](https://www.npmjs.com/package/typescript)
-[![OpenSSF Scorecard](https://api.securityscorecards.dev/projects/github.com/microsoft/TypeScript/badge)](https://securityscorecards.dev/viewer/?uri=github.com/microsoft/TypeScript)
+A private, non-judgmental harm reduction sanctuary built with React Native and Expo.
 
+## Features
 
-[TypeScript](https://www.typescriptlang.org/) is a language for application-scale JavaScript. TypeScript adds optional types to JavaScript that support tools for large-scale JavaScript applications for any browser, for any host, on any OS. TypeScript compiles to readable, standards-based JavaScript. Try it out at the [playground](https://www.typescriptlang.org/play/), and stay up to date via [our blog](https://blogs.msdn.microsoft.com/typescript) and [Twitter account](https://twitter.com/typescript).
+- Anonymous Logging with SHA-256 hashing
+- Grace Day Streak Logic
+- Crisis Trigger with SMS alerts
+- Liquid Glass UI Design
+
+## Tech Stack
+
+- Expo SDK 51
+- TypeScript 5.4+
+- Feature-Sliced Design
+- Zustand for state management
+- Expo SQLite for persistence
+- NativeWind for styling
+- Moti for animations
+
+## Getting Started
+
+1. Install dependencies: `npm install --legacy-peer-deps`
+2. Start the app: `npm start`
+
+## Project Structure
+
+```
+src/
+├── features/     # Business logic features
+├── entities/     # Business entities
+└── shared/       # Shared utilities
+app/              # Expo Router screens
+```
 
 Find others who are using TypeScript at [our community page](https://www.typescriptlang.org/community/).
 
