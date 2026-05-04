@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import * as Crypto from 'expo-crypto';
 import * as SecureStore from 'expo-secure-store';
-import { useSQLiteContext } from 'expo-sqlite';
+// import { useSQLiteContext } from 'expo-sqlite';
 
 interface LogEntry {
   substance: string;
@@ -10,7 +10,7 @@ interface LogEntry {
 }
 
 export const useShieldedLog = () => {
-  const db = useSQLiteContext();
+  // const db = useSQLiteContext();
   const [loading, setLoading] = useState(false);
 
   const saveLog = async (entry: LogEntry) => {
@@ -20,10 +20,11 @@ export const useShieldedLog = () => {
       const data = `${entry.substance}${entry.dosage}${entry.timestamp}${salt}`;
       const hash = await Crypto.digestStringAsync(Crypto.CryptoDigestAlgorithm.SHA256, data);
 
-      await db.runAsync(
-        'INSERT INTO logs (hash, obfuscated_substance, obfuscated_dosage, timestamp) VALUES (?, ?, ?, ?)',
-        [hash, obfuscate(entry.substance), obfuscate(entry.dosage), entry.timestamp]
-      );
+      // TODO: Save to SQLite
+      console.log('Receipt of Truth:', hash);
+      console.log('Obfuscated substance:', obfuscate(entry.substance));
+      console.log('Obfuscated dosage:', obfuscate(entry.dosage));
+      console.log('Timestamp:', entry.timestamp);
     } catch (error) {
       console.error('Failed to save log:', error);
     } finally {

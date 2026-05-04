@@ -4,7 +4,6 @@
     "slug": "crest-app",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "splash": {
       "image": "./assets/splash.png",
@@ -23,14 +22,10 @@
         "backgroundColor": "#0A0A0B"
       }
     },
-    "web": {
-      "favicon": "./assets/favicon.png"
-    },
+    "web": {},
     "plugins": [
       "expo-router",
-      "expo-sqlite",
       "expo-secure-store",
-      "expo-sms",
       "expo-location"
     ]
   }
