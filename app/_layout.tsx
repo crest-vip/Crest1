@@ -1,11 +1,13 @@
-import '../global.css';
-import { Stack } from 'expo-router';
+import { Stack } from "expo-router";
+import { CrisisProvider } from "../src/features/crisis/CrisisProvider";
+import "../global.css";
 
 export default function RootLayout() {
   return (
-    <Stack>
-      <Stack.Screen name="index" options={{ title: 'Home' }} />
-      <Stack.Screen name="onboarding" options={{ title: 'Onboarding' }} />
-    </Stack>
+    <CrisisProvider>
+      <Stack screenOptions={{ headerShown: false }}>
+        <Stack.Screen name="index" />
+      </Stack>
+    </CrisisProvider>
   );
 }
