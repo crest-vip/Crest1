@@ -38,31 +38,31 @@ export const SubstanceLoggingComponent: React.FC = () => {
   };
 
   return (
-    <BlurView intensity={40} className="p-4 m-4 rounded-lg bg-white/10">
-      <Text className="text-white text-lg mb-4">Log Substance</Text>
+    <BlurView intensity={80} tint="dark" className="p-6 m-4 rounded-2xl border border-liquid-glass shadow-lg shadow-safe-glow/20">
+      <Text className="text-white text-xl font-semibold mb-6 text-center">Log Substance</Text>
       <TextInput
-        className="bg-white/20 text-white p-2 rounded mb-2"
+        className="bg-liquid-glass text-white p-4 rounded-xl mb-4 border border-white/20 placeholder:text-white/60"
         placeholder="Substance"
-        placeholderTextColor="#ccc"
+        placeholderTextColor="#ffffff60"
         value={substance}
         onChangeText={setSubstance}
       />
       <TextInput
-        className="bg-white/20 text-white p-2 rounded mb-2"
+        className="bg-liquid-glass text-white p-4 rounded-xl mb-4 border border-white/20 placeholder:text-white/60"
         placeholder="Dosage"
-        placeholderTextColor="#ccc"
+        placeholderTextColor="#ffffff60"
         value={dosage}
         onChangeText={setDosage}
       />
       {hash && (
-        <Text className="text-green-400 text-sm mb-2">Receipt of Truth: {hash.slice(0, 16)}...</Text>
+        <Text className="text-safe-glow text-sm mb-4 text-center">Receipt of Truth: {hash.slice(0, 16)}...</Text>
       )}
       <TouchableOpacity
-        className="bg-[#35D07F] p-3 rounded"
+        className="bg-safe-glow p-4 rounded-xl shadow-lg shadow-safe-glow/50 active:scale-95"
         onPress={handleSave}
         disabled={loading}
       >
-        <Text className="text-white text-center">{loading ? 'Saving...' : 'Save Log'}</Text>
+        <Text className="text-white text-center font-bold text-lg">{loading ? 'Saving...' : 'Save Log'}</Text>
       </TouchableOpacity>
     </BlurView>
   );

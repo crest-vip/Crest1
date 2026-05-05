@@ -22,13 +22,13 @@ export default function HomeScreen() {
 
   return (
     <TouchableOpacity
-      className="flex-1 bg-[#0A0A0B]"
+      className="flex-1 bg-obsidian"
       activeOpacity={1}
       onPress={handleBackgroundPress}
     >
       <SafeAreaView className="flex-1">
-        <View className="flex-1 justify-center items-center p-4">
-          <Text className="text-white text-xl mb-4">Welcome to Crest App</Text>
+        <View className="flex-1 justify-center items-center p-6">
+          <Text className="text-white text-2xl font-bold mb-6 text-center">Welcome to Crest App</Text>
           <SubstanceLoggingComponent />
         </View>
       </SafeAreaView>
