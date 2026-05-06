@@ -1,37 +1,46 @@
-import React, { useState } from 'react';
-import { View, Text, TouchableOpacity } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
-import { SubstanceLoggingComponent } from '../src/features/logging/SubstanceLoggingComponent';
-import { useCrisis } from '../src/features/crisis/CrisisProvider';
+import React from 'react';
+import { View, Text, StyleSheet } from 'react-native';
 
-export default function HomeScreen() {
-  const { triggerCrisis } = useCrisis();
-  const [tapCount, setTapCount] = useState(0);
-
-  const handleBackgroundPress = () => {
-    setTapCount(prev => {
-      const newCount = prev + 1;
-      if (newCount === 5) {
-        triggerCrisis();
-        return 0;
-      }
-      setTimeout(() => setTapCount(0), 2000); // Reset after 2s
-      return newCount;
-    });
-  };
-
+export default function Page() {
   return (
-    <TouchableOpacity
-      className="flex-1 bg-obsidian"
-      activeOpacity={1}
-      onPress={handleBackgroundPress}
-    >
-      <SafeAreaView className="flex-1">
-        <View className="flex-1 justify-center items-center p-6">
-          <Text className="text-white text-2xl font-bold mb-6 text-center">Welcome to Crest App</Text>
-          <SubstanceLoggingComponent />
-        </View>
-      </SafeAreaView>
-    </TouchableOpacity>
+    <View style={styles.container}>
+      <Text style={styles.title}>CREST ONLINE</Text>
+      <View style={styles.statusCard}>
+        <Text style={styles.statusText}>• System: Verified</Text>
+        <Text style={styles.statusText}>• Connection: Elite Tunnel</Text>
+        <Text style={styles.statusText}>• Dev: Gibson Kobia</Text>
+      </View>
+    </View>
   );
-}}
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#050505',
+    alignItems: 'center',
+    justifyContent: 'center',
+    padding: 20,
+  },
+  title: {
+    color: '#00FF00',
+    fontSize: 32,
+    fontWeight: 'bold',
+    letterSpacing: 2,
+    marginBottom: 20,
+  },
+  statusCard: {
+    backgroundColor: '#111',
+    padding: 20,
+    borderRadius: 15,
+    borderWidth: 1,
+    borderColor: '#333',
+    width: '100%',
+  },
+  statusText: {
+    color: '#00FF00',
+    fontSize: 16,
+    fontFamily: 'monospace',
+    marginVertical: 4,
+  },
+});
