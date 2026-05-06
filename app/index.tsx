@@ -43,4 +43,4 @@ const styles = StyleSheet.create({
     fontFamily: 'monospace',
     marginVertical: 4,
   },
-});
+};
